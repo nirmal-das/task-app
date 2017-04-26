@@ -1,1 +1,0 @@
-mongo ds145148.mlab.com:45148/nkdmongo -u <dbuser> -p <dbpassword>

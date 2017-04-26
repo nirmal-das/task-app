@@ -1,0 +1,6 @@
+{
+    "PORT": 8900,
+    "DB_CONNECTION": "mongodb://nkd:pass@ds145148.mlab.com:45148/nkdmongo/todo",
+    "LOG_DIR": "./logs",
+    "PUBLIC_DIR": "public"
+}

@@ -1,0 +1,12 @@
+<ul class="nav nav-stacked nav-pills">
+
+  <li *ngFor="let cat of categories" [class.active]="isActive(cat)">
+
+    <a href="#" (click)="selectCategory(cat)">
+      {{cat.name}}
+      &nbsp;&nbsp;
+      <span class="badge pull-right">{{cat.count}}</span>
+    </a>
+  </li>
+
+</ul>

@@ -1,0 +1,41 @@
+
+<ta-category-nav class="tasks-left-pane" [categories]="categories" [activeCategory]="activeCategory"
+    (categorySelected)="onCategorySelected($event)">
+
+</ta-category-nav>
+
+<div class="container-fluid tasks-main-content">
+  <h4>
+    {{activeCategory && activeCategory.name}}
+    <span *ngIf="status.icon || status.msg">
+      <img src="{{status.icon}}">
+      <small>{{status.msg}}</small>
+    </span>
+
+    <button class="btn btn-primary round pull-right" (click)="tbAddTask()"> 
+      <span class="glyphicon glyphicon-plus"></span>
+    </button>
+    
+    <!--<button class="btn btn-danger round pull-right" (click)="tbRemoveTask()"> 
+      <span class="glyphicon glyphicon-remove"></span>
+    </button>
+    
+    <button class="btn btn-success round pull-right" (click)="tbCompleteTask()"> 
+      <span class="glyphicon glyphicon-ok"></span>
+    </button>
+
+    <button class="btn btn-primary round pull-right" (click)="tbMoveTaskUp()"> 
+      <span class="glyphicon glyphicon-arrow-up"></span>
+    </button>
+    
+    <button class="btn btn-primary round pull-right" (click)="tbMoveTaskDown()"> 
+      <span class="glyphicon glyphicon-arrow-down"></span>
+    </button>-->
+    
+  </h4>
+
+  <ta-edit-control *ngFor="let task of taskList" class="set-margin" [task]="task" placeholderText="Enter new task..."
+    (onTick)="completeTask($event)" (onCross)="removeTask($event)" (onUpdate)="onTaskUpdate($event)">    
+  </ta-edit-control>
+  
+</div>
